@@ -1,27 +1,10 @@
-How to run Phoenix-copager
-
+How to run X-Phoenix
 # Basic setup
-## build Phoenix-copager
-Phoenix-copager depends on comanche
-Currently pci address of NVme device is hardcoded in PCI_ADDR in allocator/copager/allocator_copager.cc:22, you may want to change it before you build
-```shell
-mkdir build
-cd build
 
-# modify path if needed
-cmake -DCOMANCHE_PREFIX:PATH=${HOME}/comanche
+## prepare Comanche
+X-Phoenix depends on [Comanche](https://github.com/IBM/comanche)
 
-```
-
-## prepare dataset
-```
-# go to project root
-cd ../
-sh scripts/get_data.sh
-```
-
-## prepare comanche
-run basic comanche set up, see [here](https://github.com/IBM/comanche/blob/unstable/README.md) for more details.
+Follow basic comanche setup, see [here](https://github.com/IBM/comanche/blob/unstable/README.md) for more details.
 basically, make sure:
 1. xms module is loaded
 2. nvme device is attached to VFIO or UIO 
@@ -35,16 +18,39 @@ basically, make sure:
 4. get the pci address
     lspci|grep Non-Volatile
 
+
+## build X-Phoenix
+
+**IMPORTANT**:
+
+Set comanche home and the PCI address of NVMe device
+```shell
+mkdir build
+cd build
+
+# modify path if needed
+cmake -DCOMANCHE_PREFIX:PATH=${HOME}/comanche -DPCI_ADDR_INPUT="\"00:06.0\"" ..
+
+```
+
+## prepare dataset
+this may take about 3~5mins
+```
+# go to project root
+cd ../
+sh scripts/get_data.sh
+```
+
 ## run test
 ```
-cd test
-./kmeans_copager_NVME
+cd build/
+sudo COMANCHE_HOME=${HOME}/comache bin/kmeans_copager_NVME
 ```
 
 
 # Advanced
-## preparations
-1. setting vm as in scripts/run\_qemu.sh(ubuntu1604, 2G ram with 4 cpus)
+## preparations for virtual machine
+1. setting vm using the [script](scripts/run_qemu.sh)(ubuntu1604, 2G ram with 4 cpus)
 
 ## swap on NVMe
 Original contents from [here](https://wiki.archlinux.org/index.php/swap#Automated)

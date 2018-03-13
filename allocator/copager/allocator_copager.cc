@@ -19,7 +19,7 @@
 #include <api/region_itf.h>
 
 #ifndef PCI_ADDR
-#define PCI_ADDR ("00:06.0")
+#error "Need PCIADDR"
 #endif
 
 namespace copager_ns{

@@ -1,14 +1,16 @@
-Using copager allocator with phoenix++ MapReduce runtime
-See README.phoenix++ for README info for Phoenix++
+Using copager allocator with phoenix++ MapReduce runtime, visit [here](https://github.com/fengggli/x-phoenix)
+
+Phoenix++ code is obtained from [here](https://github.com/kozyraki/phoenix)
+See [originreadme](README.phoenix++) for README info for Phoenix++
 
 Author: Feng Li
 e-mail: fengggli@yahoo.com
 
 ## Build
-see docs/copager/HOWTO.md
+see the [HOWTO](docs/copager/HOWTO.md)
 
 ## NEW
-1. now using qemu-nvme, docs in docs/copager
+1. now using qemu-nvme, [docs](docs/copager/qemu_conf.md), [scripts](scripts/run_qemu.sh)
 
 ## TODO
 1. wrap it!

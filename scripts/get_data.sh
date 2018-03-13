@@ -13,6 +13,7 @@ else
     mkdir -pv data
     cd data
     for app in linear_regression string_match reverse_index word_count histogram; do
+    #for app in linear_regression string_match reverse_index word_count histogram; do
         echo "[INFO]: fetch data for $app "
         if [ ! -f $app.tar.gz ]; then
             wget "http://csl.stanford.edu/~christos/data/$app.tar.gz"

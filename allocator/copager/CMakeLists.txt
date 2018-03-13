@@ -3,7 +3,7 @@
 #project(pmem-posix-tests CXX)
 
 #find_library(GTEST_LIB NAMES GTEST PATHS /usr/local/lib,/usr/lib)
-
+add_definitions(-DPCI_ADDR=${PCI_ADDR_INPUT})
 add_definitions(${GCC_COVERAGE_COMPILE_FLAGS} -DCONFIG_DEBUG)
 
 add_library(allocator-copager SHARED  allocator_copager.cc)

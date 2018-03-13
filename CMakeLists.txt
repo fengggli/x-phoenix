@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
-include(cmake/common.cmake)
 
 project(phoenix++)
+include(cmake/common.cmake)
 
 option(has_tbb "has tbb installed" off)
 
@@ -10,6 +10,8 @@ enable_testing()
 set(GTEST_ROOT "$ENV{HOME}/software/install")
 find_package(GTest REQUIRED)
 include_directories(GTEST_INCLUDE_DIRS)
+
+message("using flags ${CMAKE_CXX_FLAGS}")
 
 # intel tbb, diabled by default
 if(has_tbb)

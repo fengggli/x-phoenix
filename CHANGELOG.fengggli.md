@@ -7,10 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 Last modified: 2018 Jan 26
 Feng Li(fengggli@yahoo.com)
 
-## 2018 Mar 9
-[TODO]:
-	1. finalize the code!
-
+## 2018 Mar 12
+[clean]:
+	1. now phoenix++ code is sparated from the origin source tree 
+    2. reorganized code and docs
 ## 2018 Mar 8
 [target]:
 	1. try to finalize the 3 applications with scripts(swapping and copaging)
