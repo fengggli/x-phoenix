@@ -235,7 +235,7 @@ int main(int argc, char **argv)
 
 #ifdef COPAGER
     //init_pager();
-    init_pager(8000, 12000);
+    init_pager(6000, 12000);
 #endif
     ALLOCATOR<int> allocator_point_data;
     //std::allocator<point> allocator_points;
