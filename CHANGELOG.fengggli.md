@@ -6,6 +6,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 Last modified: 2018 Jan 26
 Feng Li(fengggli@yahoo.com)
+## 2018 Mar 25
+[TODO]:
+1. basic build blocks of spdk. 
+
+## 2018 Mar 20
+[target]:
+1. submit copager patch
+2. figure out why huge pages are different?
+3. give complete test(small physical and large illusion)
+## 2018 Mar 18
+[problems]:
+    1. pager-simple is tring to allocate 8000 pages, while the progrem initialite with 48M?(solved by set SPDK_MEMLIMIT=1024, while 48M is not suffecient? check the logs daniel gaved)
+    2. async io is not protected, can be overittern by other writes.
+code is added, need to verify
+    3. "simpe allcater" used?
 
 ## 2018 Mar 12
 [clean]:
